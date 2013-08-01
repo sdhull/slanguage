@@ -10,8 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require routes
-//= require controllers
-//= requrie models
-// view templates will simply be rendered into application layout
-// TODO: consider async loading of views?
+//= require jquery
+//= require jquery-1.9.1
+//
+//= ember-1.0.0-rc.6.1
+//= ember-data-master
+//= handlebars-1.0.0-rc.4
+//= moment
+//= showdown

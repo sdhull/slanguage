@@ -1,0 +1,73 @@
+<%# main application template %>
+<script type="text/x-handlebars">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">slang.uage.org</a>
+      <ul class="nav">
+        <li>{{#linkTo 'slangs'}}slangs{{/linkTo}}</li>
+        <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
+        {{#if isSignedIn}}
+          <li>{{#linkTo 'signin'}}sign in{{/linkTo}}</li>
+        {{else}}
+          <li>{{#linkTo 'signout'}}sign out{{/linkTo}}</li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+
+  {{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="index">
+index
+</script>
+
+<script type="text/x-handlebars" id="about">
+about
+</script>
+
+<script type="text/x-handlebars" id="signin">
+signin
+</script>
+
+<script type="text/x-handlebars" id="slangs">
+slangs
+{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="slangs/index">
+index
+</script>
+
+<script type="text/x-handlebars" id="slangs/new">
+new
+</script>
+
+<script type="text/x-handlebars" id="slangs/edit">
+edit
+</script>
+
+<script type="text/x-handlebars" id="slangs/show">
+show
+</script>
+
+<script type="text/x-handlebars" id="words">
+words
+{{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="words/index">
+index
+</script>
+
+<script type="text/x-handlebars" id="words/new">
+new
+</script>
+
+<script type="text/x-handlebars" id="words/edit">
+edit
+</script>
+
+<script type="text/x-handlebars" id="words/show">
+show
+</script>
