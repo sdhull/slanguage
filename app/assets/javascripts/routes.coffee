@@ -1,5 +1,7 @@
 App.Router.map ->
-  @resource 'about'
+  @route "about"
+  @route "signin"
+  @route "signout"
   @resource 'slangs', ->
     @resource 'slang', path: ':slang_id'
     @resource 'words', ->

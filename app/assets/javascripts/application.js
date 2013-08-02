@@ -10,8 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require_self
 //= require routes
 //= require controllers
 //= requrie models
 // view templates will simply be rendered into application layout
 // TODO: consider async loading of views?
+
+App = Ember.Application.create({});
