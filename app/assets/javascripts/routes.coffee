@@ -1,3 +1,6 @@
+App.Router.reopen
+  location: 'history'
+
 App.Router.map ->
   @route "about"
   @route "signin"

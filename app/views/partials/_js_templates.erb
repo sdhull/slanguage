@@ -1,17 +1,21 @@
 <%# main application template %>
 <script type="text/x-handlebars">
-  <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand" href="#">slang.uage.org</a>
-      <ul class="nav">
-        <li>{{#linkTo 'slangs'}}slangs{{/linkTo}}</li>
-        <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
-        {{#if isSignedIn}}
-          <li>{{#linkTo 'signin'}}sign in{{/linkTo}}</li>
-        {{else}}
-          <li>{{#linkTo 'signout'}}sign out{{/linkTo}}</li>
-        {{/if}}
+  <div class="navbar navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">slang.uage.org</a>
+      <ul class="nav navbar-nav">
+        {{#linkTo 'slangs' tagName='li' href=false}}
+          {{#linkTo 'slangs'}}slangs{{/linkTo}}
+        {{/linkTo}}
+        {{#linkTo 'about' tagName='li' href=false}}
+          {{#linkTo 'about'}}about{{/linkTo}}
+        {{/linkTo}}
       </ul>
+      {{#if isSignedIn}}
+        <p class='navbar-text'>{{#linkTo 'signout' classNames="navbar-link pull-right"}}sign out{{/linkTo}}</p>
+      {{else}}
+        <p class='navbar-text'>{{#linkTo 'signin' classNames="navbar-link pull-right"}}sign in{{/linkTo}}</p>
+      {{/if}}
     </div>
   </div>
 
@@ -19,7 +23,7 @@
 </script>
 
 <script type="text/x-handlebars" id="index">
-index
+marketing marketing marketing
 </script>
 
 <script type="text/x-handlebars" id="about">
