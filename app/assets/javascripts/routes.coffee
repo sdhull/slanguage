@@ -10,3 +10,10 @@ App.Router.map ->
     @resource 'words', ->
       @resource 'word', path: ':word_id'
 
+App.IndexRoute = Ember.Route.extend
+  model: ->
+    return App.Word.find()
+
+App.IndexView = Ember.View.extend
+  didInsertElement: ->
+    $(".carousel").carousel('pause')

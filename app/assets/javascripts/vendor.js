@@ -11,3 +11,4 @@
 //= require ember-data-master
 //= require moment
 //= require showdown
+//= require bootstrap

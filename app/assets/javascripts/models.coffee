@@ -26,7 +26,7 @@ App.User = DS.Model.extend
 App.Word = DS.Model.extend
   slang: DS.belongsTo('App.Slang')
   author: DS.belongsTo('App.User')
-  lastModifiedBy: Ds.belongsTo('App.User')
+  lastModifiedBy: DS.belongsTo('App.User')
   name: attr('string')
   definition: attr('string')
   pronounciation: attr('string')
@@ -53,26 +53,36 @@ App.Slang.FIXTURES = [{
   name: "HIMYisms"
   createdAt: new Date('12-27-2012')
   updatedAt: new Date('12-27-2012')
-  author: App.User.find(1)
+  #author: App.User.find(1)
   description: "Words and catchphrases from the popular show How I Met Your Mother"
 }, {
   id: 2
   name: "Wybrids"
   createdAt: new Date('12-27-2011')
   updatedAt: new Date('12-27-2011')
-  author: App.User.find(2)
+  #author: App.User.find(2)
   description: "Words combined with other words resulting in something combotacular!"
 }]
 
 App.Word.FIXTURES = [{
   id: 1
-  slang: App.Slang.find(1)
-  author: App.User.find(1)
-  lastModifiedBy: App.User.find(1)
+  #slang: App.Slang.find(1)
+  #author: App.User.find(1)
+  #lastModifiedBy: App.User.find(1)
   name: "possimpible"
   definition: "Where the possible meets the impossible to become... possimpible!"
   pronounciation: "Poss - imp - îble"
   etymology: "Combination of possible & impossible"
   origin: "Barney. S04E14"
+}, {
+  id: 2
+  #slang: App.Slang.find(2)
+  #author: App.User.find(2)
+  #lastModifiedBy: App.User.find(2)
+  name: "synergestic"
+  definition: "Majestic syngery"
+  pronounciation: "Syn - er - ges - tic"
+  etymology: "Combination of synergy & majestic"
+  origin: "Your mom"
 }]
 

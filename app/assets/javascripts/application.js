@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require_self
+//= require welcome
+//= require models
 //= require routes
 //= require controllers
-//= requrie models
 // view templates will simply be rendered into application layout
 // TODO: consider async loading of views?
 
-App = Ember.Application.create({});
+window.App = App = Ember.Application.create({});

@@ -1,3 +1,7 @@
+<style>
+  .carousel { background-color: #CCC; }
+</style>
+
 <%# main application template %>
 <script type="text/x-handlebars">
   <div class="navbar navbar-fixed-top">
@@ -23,7 +27,34 @@
 </script>
 
 <script type="text/x-handlebars" id="index">
-marketing marketing marketing
+<div class="carousel jumbotron slide" id="mainHero">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#mainHero" data-slide-to="0" class="active"></li>
+    <li data-target="#mainHero" data-slide-to="1"></li>
+    <li data-target="#mainHero" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <h1>
+        Your words. </br>
+        Your friends. </br>
+        Your slang.
+      </h1>
+      <span class="tagline">we.speak.your.language</span>
+    </div>
+    {{#each model}}
+      <div class="item">
+        <h1 class="word">{{this.name}}</h1>
+        <div class="description">{{this.description}}</div>
+        <div class="origin">{{this.origin}}</div>
+        <div class="etymology">{{this.etymology}}</div>
+        <div class="slangs">[{{this.slang.name}}]</div>
+        <div class="cta"><a class="btn btn-primary btn-lg">Start your slang</a></div>
+      </div>
+    {{/each}}
+  </div>
+</div>
 </script>
 
 <script type="text/x-handlebars" id="about">
