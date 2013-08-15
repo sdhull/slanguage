@@ -1,10 +1,14 @@
 App.Router.reopen
   location: 'history'
 
+App.Route.reopen
+  isLoggedIn: ->
+    App.token?
+
 App.Router.map ->
   @route "about"
-  @route "signin"
-  @route "signout"
+  @route "sign_in"
+  @route "sign_out"
   @resource 'slangs', ->
     @resource 'slang', path: ':slang_id'
     @resource 'words', ->

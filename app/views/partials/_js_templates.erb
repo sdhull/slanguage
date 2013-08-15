@@ -1,5 +1,6 @@
 <style>
   .carousel { background-color: #CCC; }
+  .item { height: 290px; }
 </style>
 
 <%# main application template %>
@@ -16,9 +17,9 @@
         {{/linkTo}}
       </ul>
       {{#if isSignedIn}}
-        <p class='navbar-text'>{{#linkTo 'signout' classNames="navbar-link pull-right"}}sign out{{/linkTo}}</p>
+        <p class='navbar-text'>{{#linkTo 'sign_out' classNames="navbar-link pull-right"}}sign out{{/linkTo}}</p>
       {{else}}
-        <p class='navbar-text'>{{#linkTo 'signin' classNames="navbar-link pull-right"}}sign in{{/linkTo}}</p>
+        <p class='navbar-text'>{{#linkTo 'sign_in' classNames="navbar-link pull-right"}}sign in{{/linkTo}}</p>
       {{/if}}
     </div>
   </div>
@@ -42,6 +43,7 @@
         Your slang.
       </h1>
       <span class="tagline">we.speak.your.language</span>
+      <div class="cta"><a class="btn btn-primary btn-lg">Start your slang</a></div>
     </div>
     {{#each model}}
       <div class="item">
@@ -61,8 +63,14 @@
 about
 </script>
 
-<script type="text/x-handlebars" id="signin">
-signin
+<script type="text/x-handlebars" id="sign_in">
+<div class="pager">
+  <div class="cta"><a class="btn btn-primary btn-lg" {{action 'fbLogin'}}>Sign in With Facebook</a></div>
+  <p>or</p>
+  <p>{{view Ember.TextField valueBinding='email' placeHolder='email'}}</p>
+  <p>{{view Ember.TextField valueBinding='password' type='password' placeHolder='password'}}</p>
+  <p class="cta"><a class="btn btn-default btn-lg" {{action 'login'}}>Sign in</a></p>
+</div>
 </script>
 
 <script type="text/x-handlebars" id="slangs">
