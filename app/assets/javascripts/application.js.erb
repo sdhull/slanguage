@@ -24,17 +24,34 @@ Ember.TextSupport.reopen({
   attributeBindings: ["placeHolder"]
 })
 
-// TODO: fill out the stuff below for slanguage
 window.fbAsyncInit = function() {
   // init the FB JS SDK
   FB.init({
-    appId      : 'YOUR_APP_ID',                        // App ID from the app dashboard
-    channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel file for x-domain comms
-    status     : true,                                 // Check Facebook Login status
-    xfbml      : true                                  // Look for social plugins on the page
+    // App ID from the app dashboard
+    appId: '<%= Slanguage::Application.config.fb_app_id %>',
+    // Channel file for x-domain comms
+    channelUrl: '//<%= Slanguage::Application.config.hostname %>/channel.html',
+    // Check Facebook Login status
+    status: true,
+    // Look for social plugins on the page
+    xfbml: true
   });
 
   // Additional initialization code such as adding Event Listeners goes here
+
+  // Here we subscribe to the auth.authResponseChange JavaScript event. This event is fired
+  // for any authentication related change, such as login, logout or session refresh. This means that
+  // whenever someone who was previously logged out tries to log in again, the correct case below 
+  // will be handled. 
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      // The response object is returned with a status field that lets the app know the current
+      // login status of the person. In this case, we're handling the situation where they 
+      // have logged in to the app.
+      testAPI();
+    }
+  });
 };
 
 // Load the SDK asynchronously

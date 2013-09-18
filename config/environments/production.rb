@@ -77,4 +77,7 @@ Slanguage::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.hostname = "slang.uage.org"
+  config.fb_app_id = '235263266112'
 end
