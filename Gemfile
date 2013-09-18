@@ -23,6 +23,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
+gem 'mongoid', "~> 4.0", git: "https://github.com/mongoid/mongoid"
+gem 'bson_ext'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

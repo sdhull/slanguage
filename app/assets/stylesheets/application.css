@@ -10,7 +10,8 @@
  *
  *= require_self
  *= require bootstrap-normalize
- *= require bootstrap-3.0-RC1
+ *= require bootstrap
+ *= require bootstrap-theme
  *= require_tree .
  */
 

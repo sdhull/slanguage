@@ -1,7 +1,7 @@
 App.Router.reopen
   location: 'history'
 
-App.Route.reopen
+Ember.Route.reopen
   isLoggedIn: ->
     App.token?
 
