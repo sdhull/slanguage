@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', ' ~> 4.0.0'
 
 
 # Use SCSS for stylesheets
@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'mongoid', "~> 4.0", git: "https://github.com/mongoid/mongoid"
 gem 'bson_ext'
+gem 'ember-rails'
+gem 'ember-source'
+gem 'ember_script-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -33,6 +36,11 @@ end
 
 group :development, :test do
   gem 'debugger'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'rspec-rails'
 end
 
 # Use ActiveModel has_secure_password

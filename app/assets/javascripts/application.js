@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_self
 //= require welcome
 //= require models
 //= require routes
@@ -24,13 +23,15 @@ Ember.TextSupport.reopen({
   attributeBindings: ["placeHolder"]
 })
 
+var fbAppId = $("meta[name='fb-app-id']").attr("content");
+var channelUrl = $("meta[name='channel-url']").attr("content");
 window.fbAsyncInit = function() {
   // init the FB JS SDK
   FB.init({
     // App ID from the app dashboard
-    appId: '<%= Slanguage::Application.config.fb_app_id %>',
+    appId: fbAppId,
     // Channel file for x-domain comms
-    channelUrl: '//<%= Slanguage::Application.config.hostname %>/channel.html',
+    channelUrl: channelUrl,
     // Check Facebook Login status
     status: true,
     // Look for social plugins on the page

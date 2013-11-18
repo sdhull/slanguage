@@ -27,4 +27,5 @@ Slanguage::Application.configure do
 
   config.hostname = "localhost:3001"
   config.fb_app_id = '192524101355'
+  config.ember.variant = :development
 end

@@ -80,4 +80,5 @@ Slanguage::Application.configure do
 
   config.hostname = "slang.uage.org"
   config.fb_app_id = '235263266112'
+  config.ember.variant = :development
 end
