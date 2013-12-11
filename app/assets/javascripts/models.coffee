@@ -1,24 +1,17 @@
-App.Store = DS.Store.extend(
-  revision: 12,
-  adapter: 'DS.FixtureAdapter'
-)
-
-attr = DS.attr
-
 App.Slang = DS.Model.extend
-  name: attr('string')
+  name: DS.attr('string')
   author: DS.belongsTo('App.User')
   words: DS.hasMany('App.Word')
-  description: attr('string')
-  createdAt: attr('date')
-  updatedAt: attr('date')
+  description: DS.attr('string')
+  createdAt: DS.attr('date')
+  updatedAt: DS.attr('date')
 
 App.User = DS.Model.extend
-  firstName: attr('string')
-  lastName: attr('string')
+  firstName: DS.attr('string')
+  lastName: DS.attr('string')
   slangs: DS.hasMany('App.Slang')
   wordsAuthored: DS.hasMany('App.Word', {inverse: 'author'})
-  fbId: attr('string')
+  fbId: DS.attr('string')
   fullName: (->
     "#{this.get('firstName')} #{this.get('lastName')}"
   ).property('firstName', 'lastName')
@@ -27,14 +20,14 @@ App.Word = DS.Model.extend
   slang: DS.belongsTo('App.Slang')
   author: DS.belongsTo('App.User')
   lastModifiedBy: DS.belongsTo('App.User')
-  name: attr('string')
-  definition: attr('string')
-  pronounciation: attr('string')
-  variations: attr('string')
-  etymology: attr('string') # eg, this is from the greek word "your mom"
-  origin: attr('string')    # eg, one day my man Brandon just came up with this shit when some T-Beezy walked by
-  createdAt: attr('date')
-  updatedAt: attr('date')
+  name: DS.attr('string')
+  definition: DS.attr('string')
+  pronounciation: DS.attr('string')
+  variations: DS.attr('string')
+  etymology: DS.attr('string') # eg, this is from the greek word "your mom"
+  origin: DS.attr('string')    # eg, one day my man Brandon just came up with this shit when some T-Beezy walked by
+  createdAt: DS.attr('date')
+  updatedAt: DS.attr('date')
 
 App.User.FIXTURES = [{
   id: 1

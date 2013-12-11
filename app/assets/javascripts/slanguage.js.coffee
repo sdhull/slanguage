@@ -1,18 +1,19 @@
+#= require_self
+#= require ./models
 #= require ./store
-#= require_tree ./models
-#= require_tree ./controllers
+#= require ./controllers
 #= require_tree ./views
 #= require_tree ./helpers
 #= require_tree ./templates
 #= require_tree ./routes
 #= require ./router
-#= require_self
 
 window.App = App = Ember.Application.create {}
 
 Ember.TextSupport.reopen
   attributeBindings: ["placeHolder"]
 
+# Facebook stuff
 fbAppId = $("meta[name='fb-app-id']").attr("content")
 channelUrl = $("meta[name='channel-url']").attr("content")
 window.fbAsyncInit = ->
