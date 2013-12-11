@@ -27,7 +27,7 @@ gem 'mongoid', "~> 4.0", git: "https://github.com/mongoid/mongoid"
 gem 'bson_ext'
 gem 'ember-rails'
 gem 'ember-source'
-gem 'ember_script-rails'
+gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

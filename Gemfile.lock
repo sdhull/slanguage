@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/ghempton/ember-script-rails.git
+  revision: 9a1f09b0c53bf51c37c35490cc76cd7dfe461234
+  specs:
+    ember_script-rails (0.0.3)
+      ember_script (>= 0.0.4)
+      rails
+
+GIT
   remote: https://github.com/mongoid/mongoid
   revision: 7087ec96de927f347f754e1907ca64527df6b4ea
   specs:
@@ -91,10 +99,7 @@ GEM
       ember_script-source (>= 0.0.2)
       execjs
       tilt
-    ember_script-rails (0.0.3)
-      ember_script (>= 0.0.4)
-      rails
-    ember_script-source (0.0.8)
+    ember_script-source (0.0.11)
     erubis (2.7.0)
     execjs (2.0.1)
     handlebars-source (1.0.12)
@@ -194,7 +199,7 @@ DEPENDENCIES
   devise
   ember-rails
   ember-source
-  ember_script-rails
+  ember_script-rails!
   jbuilder (~> 1.2)
   jquery-rails
   mongoid (~> 4.0)!
