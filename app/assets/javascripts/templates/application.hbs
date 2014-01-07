@@ -1,20 +1,54 @@
-<div class="navbar navbar-fixed-top">
-  <div class="container">
-    {{#linkTo 'index' classNames="navbar-brand"}}slang.uage.org{{/linkTo}}
-    <ul class="nav navbar-nav">
-      {{#linkTo 'slangs' tagName='li' href=false}}
-        {{#linkTo 'slangs'}}slangs{{/linkTo}}
-      {{/linkTo}}
-      {{#linkTo 'about' tagName='li' href=false}}
-        {{#linkTo 'about'}}about{{/linkTo}}
-      {{/linkTo}}
-    </ul>
-    {{#if isSignedIn}}
-      <p class='navbar-text'>{{#linkTo 'sign_out' classNames="navbar-link pull-right"}}sign out{{/linkTo}}</p>
-    {{else}}
-      <p class='navbar-text'>{{#linkTo 'sign_in' classNames="navbar-link pull-right"}}sign in{{/linkTo}}</p>
-    {{/if}}
+<div class="row">
+  <div class="large-12 columns">
+    <div class="nav-bar right">
+      <ul class="button-group">
+        {{#if isSignedIn}}
+          <li>{{#linkTo 'slangs' classNames="button"}}slangs{{/linkTo}}</li>
+          <li>{{#linkTo 'sign_out' classNames="button secondary"}}sign out{{/linkTo}}</li>
+        {{else}}
+          <li>{{#linkTo 'slangs' classNames="button secondary"}}slangs{{/linkTo}}</li>
+          <li>{{#linkTo 'sign_in' classNames="button"}}sign in{{/linkTo}}</li>
+        {{/if}}
+      </ul>
+    </div>
+    {{#linkTo 'index' classNames="navbar-brand"}}<h1>slang.uage.org</h1>{{/linkTo}}
+    <hr />
   </div>
 </div>
 
-{{outlet}}
+
+<div class="row">
+  <aside class="large-3 columns">
+    <h5>Categories</h5>
+    <ul class="side-nav">
+      <li><a href="#">News</a></li>
+      <li><a href="#">Code</a></li>
+      <li><a href="#">Design</a></li>
+      <li><a href="#">Fun</a></li>
+      <li><a href="#">Weasels</a></li>
+    </ul>
+  </aside>
+
+  <div class="large-9 columns" role="content">
+    {{outlet}}
+  </div>
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr />
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© slang.uage.org 2014</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li>{{#linkTo 'about'}}about{{/linkTo}}</li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

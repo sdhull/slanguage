@@ -15,3 +15,9 @@ App.Router.map ->
      @resource 'slang', path: ':slang_id'
      @resource 'words', ->
        @resource 'word', path: ':word_id'
+
+
+App.IndexRoute = Ember.Route.extend
+  model: ->
+    return App.Slang.FIXTURES
+    #return @store.find('slang')

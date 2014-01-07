@@ -1,6 +1,6 @@
 #= require_self
-#= require ./models
 #= require ./store
+#= require ./models
 #= require ./controllers
 #= require_tree ./views
 #= require_tree ./helpers
