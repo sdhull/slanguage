@@ -1,0 +1,20 @@
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    {{#linkTo 'index' classNames="navbar-brand"}}slang.uage.org{{/linkTo}}
+    <ul class="nav navbar-nav">
+      {{#linkTo 'slangs' tagName='li' href=false}}
+        {{#linkTo 'slangs'}}slangs{{/linkTo}}
+      {{/linkTo}}
+      {{#linkTo 'about' tagName='li' href=false}}
+        {{#linkTo 'about'}}about{{/linkTo}}
+      {{/linkTo}}
+    </ul>
+    {{#if isSignedIn}}
+      <p class='navbar-text'>{{#linkTo 'sign_out' classNames="navbar-link pull-right"}}sign out{{/linkTo}}</p>
+    {{else}}
+      <p class='navbar-text'>{{#linkTo 'sign_in' classNames="navbar-link pull-right"}}sign in{{/linkTo}}</p>
+    {{/if}}
+  </div>
+</div>
+
+{{outlet}}
