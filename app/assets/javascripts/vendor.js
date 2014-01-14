@@ -13,3 +13,4 @@
 //= require showdown
 //= require foundation
 //= require foundation.orbit
+//= require spin

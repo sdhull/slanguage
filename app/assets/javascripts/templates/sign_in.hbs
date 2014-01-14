@@ -1,15 +1,13 @@
-<div class="pager">
-  <div class="cta"><a class="btn btn-primary btn-lg" {{action 'fbLogin'}}>Sign in With Facebook</a></div>
-  <p>or</p>
-  <form class="form-inline" role="form">
-    <div class="form-group">
-      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-      {{view Ember.TextField valueBinding='email' type='email' class='form-control' placeHolder='email'}}
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="exampleInputPassword2">Password</label>
-      {{view Ember.TextField valueBinding='password' type='password' class='form-control' placeHolder='password'}}
-    </div>
-    <button type="submit" class="btn btn-default btn-lg" {{action 'login'}}>Sign in</button>
-  </form>
-</div>
+<a class="button" {{action 'fbLogin'}}>Sign in With Facebook</a>
+<p>or</p>
+<form>
+  <div>
+    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+    {{view Ember.TextField valueBinding='email' type='email' class='form-control' placeHolder='email'}}
+  </div>
+  <div>
+    <label class="sr-only" for="exampleInputPassword2">Password</label>
+    {{view Ember.TextField valueBinding='password' type='password' class='form-control' placeHolder='password'}}
+  </div>
+  <button type="submit" {{action 'login'}}>Sign in</button>
+</form>

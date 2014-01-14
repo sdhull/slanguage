@@ -30,6 +30,11 @@ $(function(){
       swipe: true
     }
   });
+
+  token = $('meta[name="csrf-token"]').attr('content');
+  $.ajaxPrefilter(function(options, originalOptions, xhr){
+    xhr.setRequestHeader('X-CSRF-Token', token);
+  });
 });
 
 window.fbAsyncInit = function() {
