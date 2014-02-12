@@ -38,4 +38,11 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, type: String
+
+  field :first_name, type: String
+  field :last_name, type: String
+  field :fbId, type: String
+
+  has_many :slangs
+  has_many :words_authored, class_name: "Word"
 end

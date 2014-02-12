@@ -1,5 +1,7 @@
-<a class="button" {{action 'fbLogin'}}>Sign in With Facebook</a>
-<p>or</p>
+<div class="text-center">
+  <a class="button" {{action 'fbLogin'}}>Sign in With Facebook</a>
+  <p>or</p>
+</div>
 <form>
   <div>
     <label class="sr-only" for="exampleInputEmail2">Email address</label>
@@ -9,5 +11,5 @@
     <label class="sr-only" for="exampleInputPassword2">Password</label>
     {{view Ember.TextField valueBinding='password' type='password' class='form-control' placeHolder='password'}}
   </div>
-  <button type="submit" {{action 'login'}}>Sign in</button>
+  <button type="submit" class="right" {{action 'login'}}>Sign in</button>
 </form>

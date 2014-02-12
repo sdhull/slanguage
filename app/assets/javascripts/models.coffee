@@ -9,12 +9,18 @@ App.Slang = DS.Model.extend
 App.User = DS.Model.extend
   firstName: DS.attr('string')
   lastName: DS.attr('string')
+  email: DS.attr('string')
   slangs: DS.hasMany('App.Slang')
   wordsAuthored: DS.hasMany('App.Word', {inverse: 'author'})
   fbId: DS.attr('string')
   fullName: (->
     "#{this.get('firstName')} #{this.get('lastName')}"
   ).property('firstName', 'lastName')
+
+App.Session = DS.Model.extend
+  email: DS.attr('string')
+  password: DS.attr('string')
+  fbId: DS.attr('string')
 
 App.Word = DS.Model.extend
   slang: DS.belongsTo('App.Slang')
